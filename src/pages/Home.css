@@ -1,0 +1,166 @@
+/* Hero Section */
+.hero {
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(13,13,13,1)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+/* Offers Section */
+.offers-section {
+  padding: 6rem 0;
+  background-color: var(--bg-color);
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.offer-card {
+  background-color: var(--bg-card);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.offer-card h3 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.offer-card p {
+  color: var(--text-muted);
+}
+
+/* Sports Covered Option */
+.sports-section {
+  padding: 4rem 0;
+  background-color: #0a0a0a;
+}
+
+.sports-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.sport-tag {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.sport-tag:hover {
+  background-color: var(--accent);
+  color: #000;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+}
+
+/* Blog Preview Section */
+.blog-preview-section {
+  padding: 6rem 0;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.blur-effect {
+  filter: grayscale(100%) blur(1px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.blog-image.placeholder {
+  height: 200px;
+  background-color: #222;
+}
+
+.blog-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.blog-content h4 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+/* Social Proof */
+.social-proof {
+  padding: 6rem 0;
+  background-color: var(--accent);
+  color: #000;
+  text-align: center;
+}
+
+.social-proof-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.social-proof-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
