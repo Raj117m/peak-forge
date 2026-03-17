@@ -25,7 +25,7 @@ function Navbar() {
           <Link to="/login" className={`login-btn ${isActive('/login') ? 'active-link' : ''}`} onClick={toggleMenu}>Login</Link>
           
           <div className="nav-socials mobile-only">
-            <a href="#" aria-label="Instagram"><Instagram size={20}/></a>
+            <a href="https://instagram.com/raj117m" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20}/></a>
             <a href="#" aria-label="YouTube"><Youtube size={20}/></a>
             <a href="#" aria-label="Twitter"><Twitter size={20}/></a>
           </div>
@@ -33,7 +33,7 @@ function Navbar() {
 
         <div className="nav-actions desktop-only">
           <div className="nav-socials">
-            <a href="#" aria-label="Instagram"><Instagram size={20}/></a>
+            <a href="https://instagram.com/raj117m" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20}/></a>
             <a href="#" aria-label="YouTube"><Youtube size={20}/></a>
             <a href="#" aria-label="Twitter"><Twitter size={20}/></a>
           </div>

@@ -12,7 +12,7 @@ function Footer() {
           </Link>
           <p className="footer-tagline">Build Strength. Improve Performance. No Fluff.</p>
           <div className="footer-socials">
-            <a href="#" aria-label="Instagram"><Instagram size={24} /></a>
+            <a href="https://instagram.com/raj117m" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={24} /></a>
             <a href="#" aria-label="YouTube"><Youtube size={24} /></a>
             <a href="#" aria-label="Twitter"><Twitter size={24} /></a>
           </div>
