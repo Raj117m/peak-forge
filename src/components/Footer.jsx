@@ -8,7 +8,7 @@ function Footer() {
       <div className="container footer-container">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            PEAKED<span>FORGE</span>
+            peaked<span>forge</span>
           </Link>
           <p className="footer-tagline">Build Strength. Improve Performance. No Fluff.</p>
           <div className="footer-socials">
