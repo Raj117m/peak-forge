@@ -15,7 +15,7 @@ function Navbar() {
     <header className="header">
       <nav className="navbar container">
         <Link to="/" className="logo">
-          PEAK<span>FORGE</span>
+          PEAKED<span>FORGE</span>
         </Link>
         
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>

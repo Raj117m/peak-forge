@@ -8,7 +8,7 @@ function Footer() {
       <div className="container footer-container">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            PEAK<span>FORGE</span>
+            PEAKED<span>FORGE</span>
           </Link>
           <p className="footer-tagline">Build Strength. Improve Performance. No Fluff.</p>
           <div className="footer-socials">
@@ -29,7 +29,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} PeakForge. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} PeakedForge. All rights reserved.</p>
       </div>
     </footer>
   );
