@@ -26,7 +26,7 @@ function Admin() {
 
   const fetchUsers = async () => {
     try {
-      const resp = await fetch('http://localhost:5555/api/users');
+      const resp = await fetch('http://127.0.0.1:5555/api/users');
       const data = await resp.json();
       setUsers(data);
     } catch (err) {
@@ -41,7 +41,7 @@ function Admin() {
         fetchUsers();
         return;
       }
-      const resp = await fetch(`http://localhost:5555/api/users/search?q=${encodeURIComponent(search)}`);
+      const resp = await fetch(`http://127.0.0.1:5555/api/users/search?q=${encodeURIComponent(search)}`);
       const data = await resp.json();
       setUsers(data);
     } catch (err) {

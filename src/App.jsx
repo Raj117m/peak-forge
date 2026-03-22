@@ -17,7 +17,7 @@ function App() {
         try {
           const user = JSON.parse(userStr);
           if (!user.isAdmin && user.email) {
-            fetch('http://localhost:5555/api/track', {
+            fetch('http://127.0.0.1:5555/api/track', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ email: user.email, timeSpent: 5 })
