@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 import './Admin.css';
 
 function Admin() {
@@ -26,11 +27,14 @@ function Admin() {
 
   const fetchUsers = async () => {
     try {
-      const resp = await fetch('http://127.0.0.1:5555/api/users');
-      const data = await resp.json();
+      const { data, error: fetchErr } = await supabase
+        .from('profiles')
+        .select('*');
+      
+      if (fetchErr) throw fetchErr;
       setUsers(data);
     } catch (err) {
-      setError('Failed to fetch users');
+      setError('Failed to fetch users: ' + err.message);
     }
   };
 
@@ -41,11 +45,15 @@ function Admin() {
         fetchUsers();
         return;
       }
-      const resp = await fetch(`http://127.0.0.1:5555/api/users/search?q=${encodeURIComponent(search)}`);
-      const data = await resp.json();
+      const { data, error: searchErr } = await supabase
+        .from('profiles')
+        .select('*')
+        .or(`name.ilike.%${search}%,email.ilike.%${search}%`);
+      
+      if (searchErr) throw searchErr;
       setUsers(data);
     } catch (err) {
-      setError('Search failed');
+      setError('Search failed: ' + err.message);
     }
   };
 
@@ -78,7 +86,6 @@ function Admin() {
               <th>ID</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Password</th>
               <th>Visits</th>
               <th>Time Spent</th>
             </tr>
@@ -86,17 +93,16 @@ function Admin() {
           <tbody>
             {users.length === 0 ? (
               <tr>
-                <td colSpan="6" style={{textAlign: 'center', padding: '2rem'}}>No users found.</td>
+                <td colSpan="5" style={{textAlign: 'center', padding: '2rem'}}>No users found.</td>
               </tr>
             ) : (
               users.map(u => (
                 <tr key={u.id}>
-                  <td>{u.id}</td>
+                  <td>{(u.id || '').substring(0, 8)}...</td>
                   <td>{u.name}</td>
                   <td>{u.email}</td>
-                  <td>{u.password}</td>
                   <td>{u.visits}</td>
-                  <td>{Math.floor(u.timeSpent / 60)}m {u.timeSpent % 60}s</td>
+                  <td>{Math.floor((u.time_spent || 0) / 60)}m {(u.time_spent || 0) % 60}s</td>
                 </tr>
               ))
             )}

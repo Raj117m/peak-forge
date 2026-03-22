@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
+import { supabase } from './supabaseClient';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -10,22 +11,25 @@ import Admin from './pages/Admin';
 
 function App() {
   useEffect(() => {
-    // Analytics tracking every 5 seconds
-    const interval = setInterval(() => {
-      const userStr = localStorage.getItem('user');
-      if (userStr) {
-        try {
-          const user = JSON.parse(userStr);
-          if (!user.isAdmin && user.email) {
-            fetch('http://127.0.0.1:5555/api/track', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: user.email, timeSpent: 5 })
-            }).catch(() => {});
-          }
-        } catch(e) {}
+    // Analytics tracking every 10 seconds (optimized for supabase)
+    const interval = setInterval(async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        // Increment time_spent in profiles table
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('time_spent')
+          .eq('id', user.id)
+          .single();
+        
+        if (profile) {
+          await supabase
+            .from('profiles')
+            .update({ time_spent: (profile.time_spent || 0) + 10 })
+            .eq('id', user.id);
+        }
       }
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);

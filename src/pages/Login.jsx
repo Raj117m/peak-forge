@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 import './Login.css';
 
 function Login() {
@@ -8,37 +9,67 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
-    if (email === 'admin' && password === 'admin') {
-      // Set admin session
-      localStorage.setItem('user', JSON.stringify({ email: 'admin', isAdmin: true }));
-      navigate('/admin');
-      return;
-    }
+    setLoading(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:5555/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password })
-      });
+      if (isRegister) {
+        // Sign Up with name in metadata
+        const { data, error: signupErr } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: { name }
+          }
+        });
 
-      const data = await response.json();
+        if (signupErr) throw signupErr;
+        
+        // Auto sign in user profile logic handled by trigger or manually
+        alert('Registration successful! Please sign in.');
+        setIsRegister(false);
+      } else {
+        // Sign In
+        const { data, error: loginErr } = await supabase.auth.signInWithPassword({
+          email,
+          password
+        });
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Login failed');
+        if (loginErr) throw loginErr;
+
+        // If it is admin
+        if (email === 'admin@peakforge.com' && password === 'admin123') {
+           localStorage.setItem('user', JSON.stringify({ email: data.user.email, isAdmin: true }));
+           navigate('/admin');
+           return;
+        }
+
+        // Increment visit count (Simple manual way if no trigger)
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', data.user.id)
+          .single();
+
+        if (profile) {
+          await supabase
+            .from('profiles')
+            .update({ visits: (profile.visits || 0) + 1 })
+            .eq('id', data.user.id);
+        }
+
+        localStorage.setItem('user', JSON.stringify({ ...data.user, name: profile?.name }));
+        navigate('/');
       }
-
-      // Handle successful login
-      localStorage.setItem('user', JSON.stringify(data.user));
-      navigate('/');
     } catch (err) {
       setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -86,8 +117,8 @@ function Login() {
               required 
             />
           </div>
-          <button type="submit" className="btn-primary">
-            {isRegister ? 'Register' : 'Sign In'}
+          <button type="submit" className="btn-primary" disabled={loading}>
+            {loading ? 'Processing...' : (isRegister ? 'Register' : 'Sign In')}
           </button>
         </form>
 
