@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { supabase } from './supabaseClient';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,29 +10,56 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
-    // Analytics tracking every 10 seconds (optimized for supabase)
+    // Determine anonymous user status
+    let anonId = localStorage.getItem('anon_id');
+    if (!anonId) {
+      anonId = 'anon_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('anon_id', anonId);
+      
+      // Track new unique visit 
+      supabase.from('anonymous_analytics').insert([{ anon_id: anonId, visits: 1, time_spent: 0, clicks: 0 }]).then(() => {}).catch(() => {});
+    }
+  }, []);
+
+  useEffect(() => {
+    let anonId = localStorage.getItem('anon_id');
     const interval = setInterval(async () => {
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
-        // Increment time_spent in profiles table
-        const { data: profile } = await supabase
-          .from('profiles')
-          .select('time_spent')
-          .eq('id', user.id)
-          .single();
-        
+        // Track logged in users time
+        const { data: profile } = await supabase.from('profiles').select('time_spent').eq('id', user.id).single();
         if (profile) {
-          await supabase
-            .from('profiles')
-            .update({ time_spent: (profile.time_spent || 0) + 10 })
-            .eq('id', user.id);
+          await supabase.from('profiles').update({ time_spent: (profile.time_spent || 0) + 10 }).eq('id', user.id);
+        }
+      } else if (anonId) {
+        // Track anonymous users time
+        const { data: anonData } = await supabase.from('anonymous_analytics').select('time_spent').eq('anon_id', anonId).single();
+        if (anonData) {
+          await supabase.from('anonymous_analytics').update({ time_spent: (anonData.time_spent || 0) + 10 }).eq('anon_id', anonId);
         }
       }
     }, 10000);
 
     return () => clearInterval(interval);
   }, []);
+
+  // Track page view / click when location changes
+  useEffect(() => {
+    let anonId = localStorage.getItem('anon_id');
+    const trackClick = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user && anonId) {
+         const { data: anonData } = await supabase.from('anonymous_analytics').select('clicks').eq('anon_id', anonId).single();
+         if (anonData) {
+           await supabase.from('anonymous_analytics').update({ clicks: (anonData.clicks || 0) + 1 }).eq('anon_id', anonId);
+         }
+      }
+    };
+    if (anonId) trackClick();
+  }, [location.pathname, location.search]);
 
   return (
     <div className="page-wrap">

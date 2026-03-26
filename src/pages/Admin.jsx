@@ -5,12 +5,13 @@ import './Admin.css';
 
 function Admin() {
   const [users, setUsers] = useState([]);
+  const [anonStats, setAnonStats] = useState({ totalVisits: 0, totalTime: 0, totalClicks: 0, distinctUsers: 0 });
   const [search, setSearch] = useState('');
   const [error, setError] = useState('');
+  const [activeTab, setActiveTab] = useState('registered');
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check admin session
     const userStr = localStorage.getItem('user');
     if (!userStr) {
       navigate('/login');
@@ -23,18 +24,39 @@ function Admin() {
     }
     
     fetchUsers();
+    fetchAnonStats();
   }, [navigate]);
 
   const fetchUsers = async () => {
     try {
-      const { data, error: fetchErr } = await supabase
-        .from('profiles')
-        .select('*');
-      
+      const { data, error: fetchErr } = await supabase.from('profiles').select('*');
       if (fetchErr) throw fetchErr;
       setUsers(data);
     } catch (err) {
-      setError('Failed to fetch users: ' + err.message);
+      console.log('Registered user fetch err', err);
+    }
+  };
+
+  const fetchAnonStats = async () => {
+    try {
+      const { data, error: err } = await supabase.from('anonymous_analytics').select('*');
+      if (err) throw err;
+      if (data) {
+        let visits = 0, time = 0, clicks = 0;
+        data.forEach(d => {
+          visits += (d.visits || 0);
+          time += (d.time_spent || 0);
+          clicks += (d.clicks || 0);
+        });
+        setAnonStats({
+          totalVisits: visits,
+          totalTime: time,
+          totalClicks: clicks,
+          distinctUsers: data.length
+        });
+      }
+    } catch (e) {
+      console.log('No anonymous analytics table exists yet, please create one in supabase', e);
     }
   };
 
@@ -64,51 +86,77 @@ function Admin() {
         <p className="admin-subtitle">Analytics and user management</p>
       </div>
 
-      <div className="admin-controls">
-        <form onSubmit={handleSearch} className="search-form">
-          <input 
-            type="text" 
-            placeholder="Search by name or email..." 
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="search-input"
-          />
-          <button type="submit" className="btn-primary search-btn">Search</button>
-        </form>
+      <div className="tabs">
+        <button className={`tab-btn ${activeTab === 'registered' ? 'active' : ''}`} onClick={() => setActiveTab('registered')}>Registered Users</button>
+        <button className={`tab-btn ${activeTab === 'anonymous' ? 'active' : ''}`} onClick={() => setActiveTab('anonymous')}>General Analytics (Anonymous)</button>
       </div>
 
-      {error && <p style={{color: 'red'}}>{error}</p>}
-
-      <div className="admin-content">
-        <table className="admin-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Visits</th>
-              <th>Time Spent</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.length === 0 ? (
-              <tr>
-                <td colSpan="5" style={{textAlign: 'center', padding: '2rem'}}>No users found.</td>
-              </tr>
-            ) : (
-              users.map(u => (
-                <tr key={u.id}>
-                  <td>{(u.id || '').substring(0, 8)}...</td>
-                  <td>{u.name}</td>
-                  <td>{u.email}</td>
-                  <td>{u.visits}</td>
-                  <td>{Math.floor((u.time_spent || 0) / 60)}m {(u.time_spent || 0) % 60}s</td>
+      {activeTab === 'registered' && (
+        <>
+          <div className="admin-controls">
+            <form onSubmit={handleSearch} className="search-form">
+              <input 
+                type="text" 
+                placeholder="Search by name or email..." 
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="search-input"
+              />
+              <button type="submit" className="btn-primary search-btn">Search</button>
+            </form>
+          </div>
+          {error && <p style={{color: 'red'}}>{error}</p>}
+          <div className="admin-content">
+            <table className="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Time Spent</th>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+              </thead>
+              <tbody>
+                {users.length === 0 ? (
+                  <tr>
+                    <td colSpan="4" style={{textAlign: 'center', padding: '2rem'}}>No users found.</td>
+                  </tr>
+                ) : (
+                  users.map(u => (
+                    <tr key={u.id}>
+                      <td>{(u.id || '').substring(0, 8)}...</td>
+                      <td>{u.name}</td>
+                      <td>{u.email}</td>
+                      <td>{Math.floor((u.time_spent || 0) / 60)}m {(u.time_spent || 0) % 60}s</td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+
+      {activeTab === 'anonymous' && (
+        <div className="analytics-grid">
+          <div className="analytics-card">
+            <h3>Unique Anonymous Users</h3>
+            <p className="stat-number">{anonStats.distinctUsers}</p>
+          </div>
+          <div className="analytics-card">
+            <h3>Total Anonymous Clicks/Visits</h3>
+            <p className="stat-number">{anonStats.totalClicks}</p>
+          </div>
+          <div className="analytics-card">
+            <h3>Total Time Spent (Global)</h3>
+            <p className="stat-number">{Math.floor(anonStats.totalTime / 60)}m {anonStats.totalTime % 60}s</p>
+          </div>
+          
+          <div className="analytics-note">
+            <p><strong>Database Note:</strong> If all these read zero, make sure you have created the <code>anonymous_analytics</code> table in your Supabase backend.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
