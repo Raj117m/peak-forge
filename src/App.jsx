@@ -46,20 +46,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Track page view / click when location changes
-  useEffect(() => {
-    let anonId = localStorage.getItem('anon_id');
-    const trackClick = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user && anonId) {
-         const { data: anonData } = await supabase.from('anonymous_analytics').select('clicks').eq('anon_id', anonId).single();
-         if (anonData) {
-           await supabase.from('anonymous_analytics').update({ clicks: (anonData.clicks || 0) + 1 }).eq('anon_id', anonId);
-         }
-      }
-    };
-    if (anonId) trackClick();
-  }, [location.pathname, location.search]);
+  // Track page view / click when location changes removed due to excessive triggering
 
   return (
     <div className="page-wrap">
