@@ -156,6 +156,109 @@ const allBlogs = [
         </div>
       </>
     )
+  },
+  {
+    id: 'powerlifting-1',
+    sport: 'Powerlifting',
+    author: 'PeakForge Science',
+    title: 'What\'s Actually Happening in Your Muscles When You Max Out',
+    preview: 'Most powerlifters think about the bar. The weight. The attempt. But the real story of a heavy lift starts somewhere most people never think about...',
+    image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=800',
+    content: (
+      <>
+        <p>Most powerlifters think about the bar. The weight. The attempt. But the real story of a heavy lift starts somewhere most people never think about — a cluster of neurons sitting in your spinal cord.</p>
+        <div className="paywalled-content">
+          <p>Every muscle contraction you've ever made began with a motor neuron firing an electrical signal. That signal, called an action potential, travels down the axon at up to 80 metres per second and reaches your muscle fibers in milliseconds. When it arrives, calcium floods into the muscle cell, and that's what actually triggers your contractile proteins to grab onto each other and produce force. No calcium release, no contraction. It's that mechanical.</p>
+          <div className="live-element pulse-border" />
+          <p><mark>Here's something that should change how you think about training heavy.</mark> Your nervous system recruits motor units in a specific order — always smallest first, largest last. The large, powerful fast-twitch units only come online when the demand is genuinely high. This is called the Size Principle. It means grinding through near-maximal attempts isn't just building muscle. It's teaching your nervous system to access the units it otherwise keeps in reserve.</p>
+          <div className="blog-image-wrapper">
+             <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50?auto=format&fit=crop&q=80&w=800" alt="Powerlifting Barbell" />
+          </div>
+          <p>Rate coding matters just as much as recruitment. A motor unit firing at higher frequency produces dramatically more force than the same unit firing slowly. Research shows that discharge rates can double after several weeks of strength training — which explains why you get stronger before you visibly get bigger. <strong>The neural adaptation comes first.</strong></p>
+          <p>The type FF motor units — the ones responsible for explosive, heavy output — fatigue fast. That's by design. They're not built for endurance. They're built for moments. Max attempts, competition lifts, PRs.</p>
+          <p>Train accordingly. Heavy, infrequent, intentional.</p>
+          <div className="highlight-box">
+             <p><strong>References:</strong> Enoka, R.M. <em>Motor Unit</em>. Physiology of the Motor Neuron and the Motor Unit. In: Handbook of Clinical Neurophysiology, Vol. 4 (Ed. Eisen, A.), Elsevier, 2004.</p>
+          </div>
+        </div>
+      </>
+    )
+  },
+  {
+    id: 'powerlifting-2',
+    sport: 'Powerlifting',
+    author: 'PeakForge Science',
+    title: 'The Weight Cut Conversation Nobody in Powerlifting Is Having Honestly',
+    preview: 'Almost nine out of ten competitive powerlifters cut weight before a meet. Most of them learned how from a training partner or a random post online...',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
+    content: (
+      <>
+        <p>Almost nine out of ten competitive powerlifters cut weight before a meet. Most of them learned how from a training partner or a random post online. That gap between how common it is and how poorly it's understood is where athletes get hurt.</p>
+        <div className="paywalled-content">
+          <p>The research breaks down weight cutting into three main methods: reducing gut content, depleting glycogen, and losing water. Each one works differently and carries a different risk profile.</p>
+          <div className="live-element expand-line" />
+          <p>The gut cut is the most overlooked and probably the safest starting point. Dropping dietary fiber below 10 grams per day for three to four days can reduce body mass by up to 0.75% — without touching hydration or energy levels. <mark>The catch is that the popular "nuts and candy" version of this approach is physiologically backwards.</mark> Nuts are high in fiber. Candy and ice cream contain less water than plain white rice. If you're doing a gut cut but eating almonds and gummy bears, you're likely actually dehydrating yourself without realising it.</p>
+          <p>Glycogen depletion matters less in powerlifting than in most sports. A max squat or deadlift is an alactic effort — it runs on phosphocreatine, not stored carbohydrate. Multiple studies show short-term carbohydrate restriction doesn't meaningfully hurt maximal strength. This is one area where powerlifting is genuinely different from team sports.</p>
+          <p>Dehydration is where things get dangerous fast. Cuts beyond 3% of body mass carry real risks — acute kidney stress, cardiovascular strain, and strength loss that may not fully reverse in a two-hour weigh-in window.</p>
+          <div className="highlight-box">
+             <p>The bottom line: start with the gut, use glycogen depletion carefully, treat dehydration as a last resort, and always have a rehydration plan ready the moment you step off the scale.</p>
+          </div>
+          <p><strong>References:</strong> Renner, A., Helms, E.R., Csapo, R. et al. <em>Short-Term Body Mass Management in Powerlifting.</em> Journal of the International Society of Sports Nutrition, 2025.</p>
+        </div>
+      </>
+    )
+  },
+  {
+    id: 'swimming-1',
+    sport: 'Swimming',
+    author: 'Kaushik Roy',
+    title: 'The Pool Doesn\'t Lie',
+    preview: 'I used to think clarity was something you found by sitting still. Journaling, breathing exercises, all of it. Tried most of them...',
+    image: 'https://images.unsplash.com/photo-1519315901367-f34f9274ce80?auto=format&fit=crop&q=80&w=800',
+    content: (
+      <>
+        <p>I used to think clarity was something you found by sitting still. Journaling, breathing exercises, all of it. Tried most of them. None of it stuck the way the water did.</p>
+        <div className="paywalled-content">
+          <p>There's a specific moment in a long freestyle set — maybe four or five laps in — where your brain stops negotiating. You're not thinking about tomorrow. You're not replaying a conversation from last week. You're just counting strokes, managing your breath, hitting the wall and turning. That's it. The rest of the world goes quiet without you asking it to.</p>
+          <div className="live-element pulse-border" />
+          <p><mark>What I didn't expect from swimming was how much it would teach me about fear.</mark> The deep end of a pool, when you first encounter it as a kid, is genuinely terrifying. There's nothing rational about it but the panic is completely real. Learning to stay calm and keep moving in a situation where every instinct tells you to freeze — that's not a swimming skill. <strong>That's a life skill.</strong></p>
+          <div className="blog-image-wrapper">
+             <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&q=80&w=800" alt="Swimming pool" />
+          </div>
+          <p>Floating taught me something too. You can't force it. Tense up, and you sink. Try too hard, and you sink. The moment you stop fighting the water and just trust it, your body rises. I've thought about that more times than I can count in situations that had nothing to do with a pool.</p>
+          <p>And the flow state swimming puts you in is different from anything else. You're moving fast, working hard, lungs burning — and somehow it feels like rest. Not the rest of doing nothing. The rest of being completely present.</p>
+          <div className="highlight-box">
+             <p>Most sports give you a workout. Swimming gives you that plus ten minutes of silence inside your own head. That's harder to find than people realise.</p>
+          </div>
+        </div>
+      </>
+    )
+  },
+  {
+    id: 'taekwondo-1',
+    sport: 'Taekwondo',
+    author: 'Kaushik Roy',
+    title: 'What the Mat Actually Teaches You',
+    preview: 'Most people hear Taekwondo and think kicks, competitions, breaking boards. That\'s the surface. Spend a few real years on the mat...',
+    image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=800',
+    content: (
+      <>
+        <p>Most people hear Taekwondo and think kicks, competitions, breaking boards. That's the surface. Spend a few real years on the mat and you realise the sport is about something quieter than any of that.</p>
+        <div className="paywalled-content">
+          <p>The physical side is obvious. You get fitter, faster, more coordinated. But the thing nobody warns you about is what consistent hard training does to your head. When you've drilled the same combination forty times and your legs are burning and you still haven't got it clean — and then you go back the next day and try again — something shifts in how you handle difficulty in general. <mark>The mat conditions you to not quit when things are uncomfortable. That carries.</mark></p>
+          <div className="live-element expand-line" />
+          <p>A good Taekwondo coach doesn't motivate you with speeches. They just show up, correct your form, and expect you to do the same. That kind of quiet consistency is more instructive than anything they could say. <strong>You learn that improvement isn't dramatic. It's just repetition, done honestly, over a long time.</strong></p>
+          <div className="blog-image-wrapper">
+             <img src="https://images.unsplash.com/photo-1580261450046-d0a30080fa9f?auto=format&fit=crop&q=80&w=800" alt="Taekwondo kicks" />
+          </div>
+          <p>What surprised me most was what exhaustion felt like after a real session. Not the tired you feel after a bad day. Something cleaner. When your body has genuinely emptied itself out, your mind stops running in circles. There's nothing left to burn. And in that stillness — hair plastered, uniform soaked, lungs pulling deep — everything that had been loud goes quiet.</p>
+          <p>I think people underestimate how much mental noise gets resolved through physical effort. Not because you've solved anything. Simply because you've used everything you had and there's nothing left to worry with.</p>
+          <div className="highlight-box">
+             <p>Taekwondo gave me that regularly. A repeatable way to find stillness by going through exhaustion first. Most people are still searching for a shortcut to that feeling. There isn't one.</p>
+          </div>
+        </div>
+      </>
+    )
   }
 ];
 
