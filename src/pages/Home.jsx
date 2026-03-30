@@ -7,7 +7,8 @@ const sportsData = [
   { name: 'Taekwondo', img: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=500&q=80' },
   { name: 'Swimming', img: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=500&q=80' },
   { name: 'Calisthenics', img: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500&q=80' },
-  { name: 'Powerlifting', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80' }
+  { name: 'Powerlifting', img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80' },
+  { name: 'Basketball', img: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&q=80' }
 ];
 
 function Home() {
