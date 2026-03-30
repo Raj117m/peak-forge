@@ -259,10 +259,57 @@ const allBlogs = [
         </div>
       </>
     )
+  },
+  {
+    id: 'basketball-1',
+    sport: 'Basketball',
+    author: 'Satvik Nalawde',
+    title: 'The History of Basketball: From Innovations to Global Phenomenon',
+    preview: 'Basketball is one of the most popular sports in the world today, but its history is not ancient when compared to other sports...',
+    image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=800',
+    content: (
+      <>
+        <p>Basketball is one of the most popular sports in the world today, but its history is not ancient when compared to other sports and games. Basketball was invented in 1891 by James Naismith, who was a physical education instructor in the United States, in a college called Springfield College. Naismith was given the task of inventing an indoor game that could be played during the cold winter months when physical education activities could not be performed outdoors. Naismith came up with a set of 13 simple rules and used a soccer ball and two peach baskets as the goalposts, and thus basketball came into existence.</p>
+        <p>Basketball soon became popular through the YMCA movement and spread throughout the United States and eventually other parts of the world. It became one of the most popular sports in the United States and other countries in the early 20th century, and in 1936, basketball became an official game in the Olympics.</p>
+        <div className="live-element expand-line" />
+        <p>The modern version of professional basketball started developing in the mid-20th century with the creation of basketball leagues, the most famous of which is the NBA, established in 1946. This led to the development of basketball into a worldwide phenomenon, featuring some of the most legendary basketball players and spreading the popularity of the game through television.</p>
+        <div className="blog-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1519861531473-920026076248?auto=format&fit=crop&q=80&w=800" alt="Basketball history" />
+        </div>
+        <p>Basketball has developed significantly in the past few decades, changing the rules, equipment, and the way the players play the game. Basketball has also had a great impact on the lives of millions of people around the world.</p>
+        <div className="highlight-box">
+          <p>Basketball is now practiced at both amateur and professional levels worldwide. From its humble origins in a small gymnasium to its current status as a global game, the history of basketball is one of innovation, expansion, and popularity.</p>
+        </div>
+      </>
+    )
+  },
+  {
+    id: 'basketball-2',
+    sport: 'Basketball',
+    author: 'Satvik Nalawde',
+    title: 'The Global Growth of Basketball',
+    preview: 'Basketball is one of the fastest-growing sports globally. According to global studies, the fan base of the sport is above 3.3 billion...',
+    image: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=800',
+    content: (
+      <>
+        <p>Basketball is one of the fastest-growing sports globally. According to global studies, the fan base of the sport is above 3.3 billion, making it one of the most watched sports globally, next to soccer or football. According to the FIBA website, the popularity of the sport has increased globally in recent times, especially among the younger age group of 16-29 years, where nearly 80% show their interest in the sport.</p>
+        <p>The popularity of basketball globally can be largely attributed to the NBA. The NBA is watched in more than 215 countries, showing the popularity of the sport globally. It is watched by more than 1.5 billion people every year. Recently, the NBA has seen increased popularity in its viewership, with record-breaking television ratings and increased social media engagement. This shows how the sport has adapted to the changing trends of the modern era.</p>
+        <div className="live-element pulse-border" />
+        <p>Another important factor in the contemporary global standing of basketball is the increasing number of international players. Players from Europe, Asia, and Africa are now superstars, making the sport more diverse and representative globally. Furthermore, there are increasing grassroots programs and youth development initiatives in places like Europe and Asia, which are strengthening the foundation of the sport globally.</p>
+        <div className="blog-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&q=80&w=800" alt="Global basketball" />
+        </div>
+        <p>Basketball is also becoming more economically viable. The basketball market is expected to grow considerably in the coming years, both globally and at the individual level. This is due to the increasing number of players, urbanization, and the need for sports equipment.</p>
+        <p>The increasing number of emerging economies is also adding to the growth of the basketball market globally. More courts are being built, providing more opportunities for players.</p>
+        <div className="highlight-box">
+          <p>In conclusion, the current state of basketball globally is very positive. With its enormous fan base, rising talent pool, extensive media coverage, and economic boom, the sport is continuing to grow beyond its geographical limits. Basketball is not just a sport; it is a global cultural phenomenon that is dictating the future of sports globally.</p>
+        </div>
+      </>
+    )
   }
 ];
 
-const categories = ['Calisthenics', 'Football', 'Cricket', 'Swimming', 'Powerlifting', 'Taekwondo'];
+const categories = ['Calisthenics', 'Football', 'Cricket', 'Swimming', 'Powerlifting', 'Taekwondo', 'Basketball'];
 
 function Blogs() {
   const [user, setUser] = useState(null);
@@ -362,19 +409,8 @@ function Blogs() {
             </div>
           </div>
           
-          <div className={`blog-body ${!user ? 'not-logged-in' : ''}`}>
+          <div className="blog-body">
             {activeBlog.content}
-            
-            {!user && (
-              <div className="auth-paywall">
-                <h3>Keep reading this article</h3>
-                <p>Register an account to unlock full access to our premium performance insights, straight from the authors.</p>
-                <div className="paywall-buttons">
-                  <Link to="/login" className="btn-primary">Create Account</Link>
-                  <Link to="/login" className="btn-secondary">Login</Link>
-                </div>
-              </div>
-            )}
           </div>
         </article>
       )}
