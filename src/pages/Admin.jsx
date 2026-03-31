@@ -89,6 +89,7 @@ function Admin() {
       <div className="tabs">
         <button className={`tab-btn ${activeTab === 'registered' ? 'active' : ''}`} onClick={() => setActiveTab('registered')}>Registered Users</button>
         <button className={`tab-btn ${activeTab === 'anonymous' ? 'active' : ''}`} onClick={() => setActiveTab('anonymous')}>General Analytics (Anonymous)</button>
+        <button className={`tab-btn ${activeTab === 'strategy' ? 'active' : ''}`} onClick={() => setActiveTab('strategy')}>Blog Strategy Details</button>
       </div>
 
       {activeTab === 'registered' && (
@@ -154,6 +155,48 @@ function Admin() {
           
           <div className="analytics-note">
             <p><strong>Database Note:</strong> If all these read zero, make sure you have created the <code>anonymous_analytics</code> table in your Supabase backend.</p>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'strategy' && (
+        <div className="strategy-section">
+          <div className="strategy-card">
+            <div className="strategy-icon">🎯</div>
+            <div className="strategy-content">
+              <h3>Blog Topic Selection & Justification</h3>
+              <p className="strategy-desc">Clearly explain the chosen topic and the rationale behind selecting it.</p>
+              <div className="strategy-text">
+                <p><strong>Chosen Topics:</strong> Elite Sports Performance focusing on Powerlifting, Swimming, and Taekwondo.</p>
+                <p><strong>Rationale:</strong> PeakForge caters to high-performance athletes requiring specialized, data-driven training methodologies rather than generic fitness advice. These diverse disciplines cover pure strength, aquatic endurance, and explosive martial arts, addressing a broad spectrum of elite athletic needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="strategy-card">
+            <div className="strategy-icon">👥</div>
+            <div className="strategy-content">
+              <h3>Target Audience Identification</h3>
+              <p className="strategy-desc">Define your intended audience segment with relevant details.</p>
+              <div className="strategy-text">
+                <p><strong>Audience Segment:</strong> Intermediate to advanced athletes, dedicated sports coaches, and competitive fitness professionals.</p>
+                <p><strong>Details:</strong> These individuals are highly dedicated, data-oriented, and actively seeking evidence-based knowledge in biomechanics, physiological adaptations, and optimal programming structures to enhance their competitive performance edge.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="strategy-card">
+            <div className="strategy-icon">👤</div>
+            <div className="strategy-content">
+              <h3>Buyer Persona Creation</h3>
+              <p className="strategy-desc">Present a detailed buyer persona reflecting your audience insights.</p>
+              <div className="strategy-text">
+                <p><strong>Name:</strong> Elite Coach Ethan (32 years old, Strength & Conditioning Coach)</p>
+                <p><strong>Background:</strong> Works with regional and national-level competitive athletes. Holds a degree in Kinesiology.</p>
+                <p><strong>Goals & Pain Points:</strong> Always hunting for the latest research on sports physiology. Frustrated by superficial "fitness influencer" content. Needs deep, actionable programming strategies and performance analytics.</p>
+                <p><strong>Value Proposition:</strong> PeakForge provides Ethan with vetted, high-level technical breakdowns that he can directly apply to his athletes' training cycles.</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
