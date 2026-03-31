@@ -60,7 +60,7 @@ function Navbar() {
           <div className="nav-socials mobile-only">
             <a href="https://instagram.com/raj117m" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20}/></a>
             <a href="https://youtube.com/@peakforge-19k?si=czq9thIrFHc-c4Jr" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><Youtube size={20}/></a>
-            <a href="https://youtu.be/dQw4w9WgXcQ?si=rqs5_oGWurUIedTb" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20}/></a>
+            <a href="https://youtube.com/shorts/_6HzLIJPH2A?si=x2VeRkHVnygXjKAn" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20}/></a>
           </div>
         </div>
 
@@ -68,7 +68,7 @@ function Navbar() {
           <div className="nav-socials">
             <a href="https://instagram.com/raj117m" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20}/></a>
             <a href="https://youtube.com/@peakforge-19k?si=czq9thIrFHc-c4Jr" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><Youtube size={20}/></a>
-            <a href="https://youtu.be/dQw4w9WgXcQ?si=rqs5_oGWurUIedTb" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20}/></a>
+            <a href="https://youtube.com/shorts/_6HzLIJPH2A?si=x2VeRkHVnygXjKAn" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20}/></a>
           </div>
         </div>
 
