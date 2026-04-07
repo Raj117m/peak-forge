@@ -8,24 +8,26 @@ const allBlogs = [
     id: 'calisthenics-1',
     sport: 'Calisthenics',
     author: 'Rajdeep Malladeb',
-    title: 'Why I Quit the Gym and Never Looked Back',
-    preview: 'Three years ago I cancelled my gym membership. Honestly? Best decision I made for my body...',
-    image: 'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&q=80&w=800',
+    title: 'I Tried the Best Gyms in the City and Ended Up Training in My Society',
+    preview: 'I have trained at some genuinely good gyms. Cult.Fit for the classes, a proper iron gym for heavy lifting...',
+    image: '/images/home_gym_trainer_one_1775556043274.png',
     content: (
       <>
-        <p>Three years ago I cancelled my gym membership. Honestly? Best decision I made for my body.</p>
+        <p>I have trained at some genuinely good gyms. Cult.Fit for the classes, a proper iron gym for heavy lifting, even a premium place near college that had everything — cables, racks, turf, the full setup. I was serious about it. Paid the fees, showed up consistently, tracked my lifts.</p>
         <div className="paywalled-content">
-          <p>I was spending ₹2,400 a month to wait in line for a bench press. Half the time the equipment I needed was taken, the trainer barely knew my name, and I was driving 25 minutes each way just to be there. The whole setup stopped making sense.</p>
+          <p>But second year of college hit and everything started falling apart logistically.</p>
           <div className="live-element pulse-border" />
-          <p>I started training in my building's terrace with nothing. Pull-up bar bolted to the door frame. That's it. And within four months, I was stronger than I'd ever been at the gym.</p>
-          <p><mark>Calisthenics works because it doesn't let you cheat the movement.</mark> You can load a bar with plates and still have terrible mechanics. But when your bodyweight is the resistance, there's nowhere to hide. Your joints, your tendons, your stabilizers — they all get involved. <strong>You build real, functional strength.</strong></p>
+          <p>My mornings started with catching a Cityflo to college. By the time lectures ended and I got back it was already evening with barely any energy left. The bus was comfortable enough but the schedule was fixed — miss it and your whole day shifts. Between that and assignments piling up, the gym kept slipping. Missing two days became missing a week. That week became a month.</p>
+          <p><mark>The gym wasn't the problem. Fitting it into an actual college day was.</mark></p>
           <div className="blog-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=800" alt="Training outside" />
+             <img src="/images/home_gym_inner_one_1775556077648.png" alt="Training" />
           </div>
-          <p>The progression is what keeps you hooked. You start with basic push-ups, then diamond, then archer, then eventually you're working toward a one-arm push-up and suddenly you realise you've been training consistently for months without even thinking about it. The goals feel like puzzles, not chores.</p>
-          <p>The biggest myth I keep hearing is that calisthenics can't build size. That's just wrong. Look up any bar athlete who's been training for two to three years. The muscle density is different — thicker, not just bigger — because the time under tension and the range of motion in bodyweight movements are genuinely superior for certain muscle groups.</p>
+          <p>A trainer started coming to my society gym three times a week. No commute, no rushing, no losing an evening to travel. Just walking downstairs and getting to work.</p>
+          <p>But what actually surprised me was how good the training itself was. This guy knew both worlds — heavy compound lifting and bodyweight progressions. He built a programme combining whatever equipment the society gym had with calisthenics work.</p>
+          <p>What I didn't know before was that compound bodyweight movements recruit more muscle fibres simultaneously than most isolation machine exercises. Your stabiliser muscles are working constantly through every rep. That's something a cable machine simply doesn't replicate the same way.</p>
+          <p><strong>Within three months my strength was better than at any premium gym I had paid for.</strong></p>
           <div className="highlight-box">
-            <p>You don't need a gym to be serious about training. You need consistency, patience, and enough floor space to do a push-up. Start there. Everything else follows.</p>
+             <p>No missed Cityflo panic. No wasted evenings. Just training that finally fit around my actual life.</p>
           </div>
         </div>
       </>
@@ -35,24 +37,27 @@ const allBlogs = [
     id: 'calisthenics-2',
     sport: 'Calisthenics',
     author: 'Rajdeep Malladeb',
-    title: 'The Move That Changed How I Train Forever',
-    preview: 'I remember the exact moment calisthenics stopped being a "beginner thing" to me...',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800',
+    title: 'The Best Gym I Ever Trained at Was in My Own Society',
+    preview: 'For almost two years I did everything right on paper. Premium membership, four sessions a week, structured programmes...',
+    image: '/images/home_gym_reflective_two_1775556120148.png',
     content: (
       <>
-        <p>I remember the exact moment calisthenics stopped being a "beginner thing" to me.</p>
+        <p>For almost two years I did everything right on paper. Premium membership, four sessions a week, structured programmes, progressive overload tracked properly. Barbell work, cable machines, free weights — I genuinely enjoyed it and was making real progress.</p>
         <div className="paywalled-content">
-          <p>I was watching a guy at the park do a full planche — body completely horizontal, held off the ground by just his palms. No machines, no weights, no spotter. Just years of work made visible in one still position. I stood there for a full minute just watching.</p>
-          <p>That day I went home and started from scratch.</p>
+          <p>Then third semester started and everything got complicated.</p>
           <div className="live-element expand-line" />
-          <p>What most people don't understand about calisthenics is that the skill elements change your relationship with training entirely. In a gym, the goal is usually straightforward — more weight, more reps. That's fine, but it gets old. <mark>Calisthenics introduces a different kind of goal. You're not just building strength; you're learning movement.</mark> The human flag, the muscle-up, the front lever — these aren't just party tricks. They require full-body tension, proprioception, and coordination that standard gym training doesn't develop the same way.</p>
+          <p>My entire morning revolved around catching the Cityflo on time. Miss it and college timing falls apart completely. So I was up early, out fast, in college till late afternoon, back home by evening completley drained. The idea of then changing and heading across the city to a gym felt genuinely unrealistic on most days.</p>
           <div className="blog-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=800" alt="Core rigidity" />
+             <img src="/images/home_gym_inner_two_1775556149354.png" alt="Society Gym Training" />
           </div>
-          <p>Your core, for example. Every advanced calisthenics skill demands a level of core rigidity that isolating abs on a crunch machine simply doesn't build. <strong>Your whole midsection has to learn to act as a single locked unit.</strong> That carries over into everything — posture, injury prevention, how you move in daily life.</p>
-          <p>The outdoor training aspect matters too. There's something about training at a park or on a rooftop that keeps the ego in check. No mirrors, no audience, no one to impress. Just you and the bar and the work.</p>
-          <p>The community around calisthenics is also different. Street workout culture tends to attract people who genuinely love movement — not aesthetics, not Instagram, just the craft.</p>
-          <p>If you've been going through the motions at the gym, try a month of bodyweight-only training. You'll feel the difference by week two.</p>
+          <p><mark>I tried pushing through it for a while. But motivation doesn't survive a packed schedule indefinetly.</mark> Slowly my consistency — something I had built carefully over months — just collapsed quietly.</p>
+          <p>A trainer started coming to my society gym three mornings a week, right before my Cityflo timing. That one decision changed everything. The gym was literally in my building. No excuses, no travel, no wasted time.</p>
+          <p>The quality of training surprised me more than the convenience did though. This trainer understood both heavy lifting and skill based calisthenics properly. He explained things no commercial gym trainer ever had.</p>
+          <p>That bodyweight training naturally increases time under tension. That movements like scapular pull ups and controlled dip progressions build tendon strength that regular machine work often neglects completley. That slow boring progressions compound into real strength over months even when daily progress feels invisible.</p>
+          <p><strong>I started basic. Improved slowly. Showed up every single day because the gym was always just downstairs.</strong></p>
+          <div className="highlight-box">
+             <p>Removing the logistical friction was honestly the most important fitness decision I ever made.</p>
+          </div>
         </div>
       </>
     )
