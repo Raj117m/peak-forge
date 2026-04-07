@@ -12,7 +12,7 @@ function Footer() {
           </Link>
           <p className="footer-tagline">Build Strength. Improve Performance. No Fluff.</p>
           <div className="footer-socials">
-            <a href="https://instagram.com/raj117m" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={24} /></a>
+            <a href="https://www.instagram.com/peakedforge_380/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={24} /></a>
             <a href="https://youtube.com/@peakforge-19k?si=czq9thIrFHc-c4Jr" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><Youtube size={24} /></a>
             <a href="https://youtube.com/shorts/_6HzLIJPH2A?si=x2VeRkHVnygXjKAn" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={24} /></a>
           </div>
