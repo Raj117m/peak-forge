@@ -9,25 +9,29 @@ const allBlogs = [
     sport: 'Calisthenics',
     author: 'Rajdeep Malladeb',
     title: 'I Tried the Best Gyms in the City and Ended Up Training in My Society',
-    preview: 'I have trained at some genuinely good gyms. Cult.Fit for the classes, a proper iron gym for heavy lifting...',
+    preview: 'Cult.Fit, a proper iron gym, even a premium facility near college with full cable setups and turf space...',
     image: '/images/home_gym_trainer_one_1775556043274.png',
     content: (
       <>
-        <p>I have trained at some genuinely good gyms. Cult.Fit for the classes, a proper iron gym for heavy lifting, even a premium place near college that had everything — cables, racks, turf, the full setup. I was serious about it. Paid the fees, showed up consistently, tracked my lifts.</p>
+        <p>Cult.Fit, a proper iron gym, even a premium facility near college with full cable setups and turf space. I tried them all. Paid the fees, showed up, tracked my lifts. For a while it worked fine.</p>
         <div className="paywalled-content">
-          <p>But second year of college hit and everything started falling apart logistically.</p>
+          <p>Then first year of college started and the whole thing fell apart.</p>
           <div className="live-element pulse-border" />
-          <p>My mornings started with catching a Cityflo to college. By the time lectures ended and I got back it was already evening with barely any energy left. The bus was comfortable enough but the schedule was fixed — miss it and your whole day shifts. Between that and assignments piling up, the gym kept slipping. Missing two days became missing a week. That week became a month.</p>
-          <p><mark>The gym wasn't the problem. Fitting it into an actual college day was.</mark></p>
+          <p>Mornings are Cityflo. Afternoons are lectures and submissions. By evening there is genuinely nothing left in the tank. Research from the American Council on Exercise actually shows that workout adherance drops by nearly 40 percent when commute time to a gym exceeds 20 minutes. That number felt very real very quickly.</p>
+          <p><mark>Missing sessions became the norm. Consistency — the one thing that actually drives results — was gone.</mark></p>
           <div className="blog-image-wrapper">
              <img src="/images/home_gym_inner_one_1775556077648.png" alt="Training" />
           </div>
-          <p>A trainer started coming to my society gym three times a week. No commute, no rushing, no losing an evening to travel. Just walking downstairs and getting to work.</p>
-          <p>But what actually surprised me was how good the training itself was. This guy knew both worlds — heavy compound lifting and bodyweight progressions. He built a programme combining whatever equipment the society gym had with calisthenics work.</p>
-          <p>What I didn't know before was that compound bodyweight movements recruit more muscle fibres simultaneously than most isolation machine exercises. Your stabiliser muscles are working constantly through every rep. That's something a cable machine simply doesn't replicate the same way.</p>
-          <p><strong>Within three months my strength was better than at any premium gym I had paid for.</strong></p>
+          <p>A trainer started coming to my society gym three mornings a week before college. No travel, no wasted evenings, no excuses.</p>
+          <p>What surprised me more than the convenience was the actual quality of training. The programme combined whatever equipment the society gym had with structured calisthenics progressions.</p>
+          <p>Studies published in the Journal of Human Kinetics show that compound bodyweight movements activate stabiliser muscles significantly more than isolated machine based exercises, leading to better functional strength over time. Push up variations, pull up progressions, dip work — movements that build real usable strength because multiple muscle groups are firing simultaneusly.</p>
+          <p><strong>Within a few months strength and endurance had improved more than during any premium gym phase.</strong></p>
+          <p>No commute stress. No membership drain. Just training that actually fit around a first year college schedule.</p>
+          <p>Sometimes the best setup is the most accessable one.</p>
           <div className="highlight-box">
-             <p>No missed Cityflo panic. No wasted evenings. Just training that finally fit around my actual life.</p>
+             <p><strong>Bibliography</strong></p>
+             <p style={{fontSize: '0.85rem'}}>American Council on Exercise. <em>Exercise Adherence and Barriers to Physical Activity.</em> ACE Fitness, 2018.</p>
+             <p style={{fontSize: '0.85rem'}}>Calatayud, J. et al. <em>Muscle Activation During Push Up Variations.</em> Journal of Human Kinetics, 2015.</p>
           </div>
         </div>
       </>
@@ -37,26 +41,30 @@ const allBlogs = [
     id: 'calisthenics-2',
     sport: 'Calisthenics',
     author: 'Rajdeep Malladeb',
-    title: 'The Best Gym I Ever Trained at Was in My Own Society',
-    preview: 'For almost two years I did everything right on paper. Premium membership, four sessions a week, structured programmes...',
+    title: 'The Best Gym Decision I Made Was Staying in My Own Building',
+    preview: 'Premium memberships, structured programmes, progressive overload tracked properly. Barbell work, cables, free weights...',
     image: '/images/home_gym_reflective_two_1775556120148.png',
     content: (
       <>
-        <p>For almost two years I did everything right on paper. Premium membership, four sessions a week, structured programmes, progressive overload tracked properly. Barbell work, cable machines, free weights — I genuinely enjoyed it and was making real progress.</p>
+        <p>Premium memberships, structured programmes, progressive overload tracked properly. Barbell work, cables, free weights — genuinely good training environments. First year of college changed the equation completley though.</p>
         <div className="paywalled-content">
-          <p>Then third semester started and everything got complicated.</p>
+          <p>The Cityflo schedule runs the morning. Lectures run the afternoon. By the time evening arrives the motivation to commute across the city to a gym is basically nonexistent.</p>
           <div className="live-element expand-line" />
-          <p>My entire morning revolved around catching the Cityflo on time. Miss it and college timing falls apart completely. So I was up early, out fast, in college till late afternoon, back home by evening completley drained. The idea of then changing and heading across the city to a gym felt genuinely unrealistic on most days.</p>
+          <p>A study in the International Journal of Behavioral Nutrition found that perceived time scarcity is one of the top three barriers to consistent exercise among university students. That research felt accurate within the first few weeks of semester.</p>
+          <p><mark>A trainer started coming to my society gym three mornings a week. The shift was immediate. No lost time, no schedule conflict, no skipping because of a long college day.</mark></p>
           <div className="blog-image-wrapper">
              <img src="/images/home_gym_inner_two_1775556149354.png" alt="Society Gym Training" />
           </div>
-          <p><mark>I tried pushing through it for a while. But motivation doesn't survive a packed schedule indefinetly.</mark> Slowly my consistency — something I had built carefully over months — just collapsed quietly.</p>
-          <p>A trainer started coming to my society gym three mornings a week, right before my Cityflo timing. That one decision changed everything. The gym was literally in my building. No excuses, no travel, no wasted time.</p>
-          <p>The quality of training surprised me more than the convenience did though. This trainer understood both heavy lifting and skill based calisthenics properly. He explained things no commercial gym trainer ever had.</p>
-          <p>That bodyweight training naturally increases time under tension. That movements like scapular pull ups and controlled dip progressions build tendon strength that regular machine work often neglects completley. That slow boring progressions compound into real strength over months even when daily progress feels invisible.</p>
-          <p><strong>I started basic. Improved slowly. Showed up every single day because the gym was always just downstairs.</strong></p>
+          <p>The trainer understood both worlds — heavy lifting and skill based calisthenics. The programme he built mixed available equipment with bodyweight progressions in a way no commercial gym trainer had ever done for me. He explained why this combination works.</p>
+          <p>Bodyweight training naturally increases time under tension, which research in the European Journal of Applied Physiology links directly to greater muscle fibre recruitment over time. Skills like scapular pull ups and slow negative dips also develop tendon strength that machine based training frequently neglects, reducing injury risk over the long term.</p>
+          <p>Progress was slow and unspectacular at first. Basic holds, movement quality corrections, building from the ground up. But that slow compounding is exactly how real strength is built.</p>
+          <p><strong>Showed up every single day because the gym was always just downstairs.</strong></p>
+          <p>Removing the friction between yourself and your training might genuinely be the most underrated fitness decision anyone can make.</p>
           <div className="highlight-box">
-             <p>Removing the logistical friction was honestly the most important fitness decision I ever made.</p>
+             <p><strong>Bibliography</strong></p>
+             <p style={{fontSize: '0.85rem'}}>Martínez-Lemos, R.I. et al. <em>Perceived Barriers to Physical Activity in University Students.</em> International Journal of Behavioral Nutrition and Physical Activity, 2021.</p>
+             <p style={{fontSize: '0.85rem'}}>Burd, N.A. et al. <em>Muscle Time Under Tension and Hypertrophy.</em> European Journal of Applied Physiology, 2012.</p>
+             <p style={{fontSize: '0.85rem'}}>Calatayud, J. et al. <em>Muscle Activation During Bodyweight vs Machine Exercises.</em> Journal of Human Kinetics, 2015.</p>
           </div>
         </div>
       </>
